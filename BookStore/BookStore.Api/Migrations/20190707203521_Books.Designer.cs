@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.Api.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20190618195054_BookStore.Api.Models.BookContext")]
-    partial class BookStoreApiModelsBookContext
+    [Migration("20190707203521_Books")]
+    partial class Books
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,8 +22,9 @@ namespace BookStore.Api.Migrations
 
             modelBuilder.Entity("BookStore.Api.Models.Book", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Author");
 

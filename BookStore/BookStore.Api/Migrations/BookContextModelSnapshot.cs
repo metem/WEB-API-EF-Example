@@ -20,8 +20,9 @@ namespace BookStore.Api.Migrations
 
             modelBuilder.Entity("BookStore.Api.Models.Book", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Author");
 
