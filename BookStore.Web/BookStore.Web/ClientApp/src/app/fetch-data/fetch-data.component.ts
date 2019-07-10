@@ -9,7 +9,7 @@ export class FetchDataComponent {
   public books: Book[];
 
   constructor(http: HttpClient) {
-    http.get<Book[]>('http://localhost:63242/api/book').subscribe(result => {
+    http.get<Book[]>('http://localhost:1001/api/book').subscribe(result => {
       this.books = result;
     }, error => console.error(error));
   }

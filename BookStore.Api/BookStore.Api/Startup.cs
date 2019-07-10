@@ -48,6 +48,12 @@ namespace BookStore.Api
             app.UseCors("AllowAll");
 
             app.UseMvc();
+
+            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            using (var context = scope.ServiceProvider.GetService<BookContext>())
+            {
+                context.Database.Migrate();
+            }
         }
     }
 }
