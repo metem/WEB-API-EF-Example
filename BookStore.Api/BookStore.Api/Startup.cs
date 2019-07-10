@@ -47,7 +47,6 @@ namespace BookStore.Api
 
             app.UseCors("AllowAll");
 
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
